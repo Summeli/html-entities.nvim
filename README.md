@@ -3,6 +3,14 @@ nvim html entities plugin. HTML encode / decode files with this plugin
 
 This plugin is based on [htmlEntities-for-lua](https://github.com/TiagoDanin/htmlEntities-for-lua) by TiagoDanin: 
 
+## Status
+
+This plugin is under active development, it should "work", but the installation scripts are not yet done...
+
+## Requirements
+
+- `nvim 0.9+`
+
 ## Installation
 
 ```lua
