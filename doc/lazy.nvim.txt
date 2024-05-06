@@ -4,11 +4,11 @@
 Table of Contents                                *lazy.nvim-table-of-contents*
 
 1. html-entities.nvim                           |lazy.nvim-html-entities.nvim|
-  - Status                               |lazy.nvim-html-entities.nvim-status|
-  - Requirements                   |lazy.nvim-html-entities.nvim-requirements|
-  - Installation                   |lazy.nvim-html-entities.nvim-installation|
-  - How to use                       |lazy.nvim-html-entities.nvim-how-to-use|
-  - Contributors                   |lazy.nvim-html-entities.nvim-contributors|
+2. Status                                                   |lazy.nvim-status|
+3. Requirements                                       |lazy.nvim-requirements|
+4. Installation                                       |lazy.nvim-installation|
+5. How to use                                           |lazy.nvim-how-to-use|
+6. Contributors                                       |lazy.nvim-contributors|
 
 ==============================================================================
 1. html-entities.nvim                           *lazy.nvim-html-entities.nvim*
@@ -19,18 +19,21 @@ This plugin is based on htmlEntities-for-lua
 <https://github.com/TiagoDanin/htmlEntities-for-lua> by TiagoDanin:
 
 
-STATUS                                   *lazy.nvim-html-entities.nvim-status*
+==============================================================================
+2. Status                                                   *lazy.nvim-status*
 
 This plugin is under active development, it should "work", but the installation
 scripts are not yet done…
 
 
-REQUIREMENTS                       *lazy.nvim-html-entities.nvim-requirements*
+==============================================================================
+3. Requirements                                       *lazy.nvim-requirements*
 
 - `nvim 0.9+`
 
 
-INSTALLATION                       *lazy.nvim-html-entities.nvim-installation*
+==============================================================================
+4. Installation                                       *lazy.nvim-installation*
 
 >lua
     -- packer.nvim
@@ -43,7 +46,8 @@ INSTALLATION                       *lazy.nvim-html-entities.nvim-installation*
 <
 
 
-HOW TO USE                           *lazy.nvim-html-entities.nvim-how-to-use*
+==============================================================================
+5. How to use                                           *lazy.nvim-how-to-use*
 
 to encode, use:
 
@@ -58,7 +62,8 @@ and to decode
 <
 
 
-CONTRIBUTORS                       *lazy.nvim-html-entities.nvim-contributors*
+==============================================================================
+6. Contributors                                       *lazy.nvim-contributors*
 
 Contributions are welcome. If you have an idea for a feature you’d like to
 see added, submit a PR rquest
