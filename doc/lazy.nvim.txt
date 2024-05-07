@@ -1,4 +1,4 @@
-*lazy.nvim.txt*          For Neovim >= 0.8.0          Last change: 2024 May 06
+*lazy.nvim.txt*          For Neovim >= 0.8.0          Last change: 2024 May 07
 
 ==============================================================================
 Table of Contents                                *lazy.nvim-table-of-contents*
@@ -22,8 +22,8 @@ This plugin is based on htmlEntities-for-lua
 ==============================================================================
 2. Status                                                   *lazy.nvim-status*
 
-This plugin is under active development, it should "work", but the installation
-scripts are not yet done…
+This plugin is under active development, the HtmlEncode and Decode should work.
+Contributions are accepted, if you have more ideas how to do this.
 
 
 ==============================================================================
