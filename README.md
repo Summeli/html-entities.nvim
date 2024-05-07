@@ -5,7 +5,7 @@ This plugin is based on [htmlEntities-for-lua](https://github.com/TiagoDanin/htm
 
 # Status
 
-This plugin is under active development, it should "work", but the installation scripts are not yet done...
+This plugin is under active development, the HtmlEncode and Decode should work. Contributions are accepted, if you have more ideas how to do this. 
 
 # Requirements
 
