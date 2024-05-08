@@ -2376,14 +2376,4 @@ function htmlEntities.encode(input)
   return output
 end
 
-function string:htmlDecode(filter)
-  if not self then return false end
-  return htmlEntities.decode(self)
-end
-
-function string:htmlEncode(filter)
-  if not self then return false end
-  return htmlEntities.encode(self)
-end
-
 return htmlEntities
