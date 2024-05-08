@@ -17,7 +17,8 @@ function he.setup()
 end
 
 function he.encode()
-  local buf = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local bufIndex = vim.api.nvim_get_current_buf()
+  local buf = vim.api.nvim_buf_get_lines(bufIndex, 0, -1, false)
 
   local encodedBuf = {}
   local eob = 0
@@ -32,11 +33,12 @@ function he.encode()
     eob = n
   end
   --update the buffer
-  vim.api.nvim_buf_set_lines(0, 0, eob, false, encodedBuf)
+  vim.api.nvim_buf_set_lines(bufIndex, 0, eob, false, encodedBuf)
 end
 
 function he.decode()
-  local buf = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local bufIndex = vim.api.nvim_get_current_buf()
+  local buf = vim.api.nvim_buf_get_lines(bufIndex, 0, -1, false)
 
   local decodedBuf = {}
   local eob = 0
@@ -51,7 +53,7 @@ function he.decode()
     eob = n
   end
   --update the buffer
-  vim.api.nvim_buf_set_lines(0, 0, eob, false, decodedBuf)
+  vim.api.nvim_buf_set_lines(bufIndex, 0, eob, false, decodedBuf)
 end
 
 he.options = nil
