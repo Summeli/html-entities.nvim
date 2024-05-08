@@ -15,10 +15,10 @@ jobs:
          version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
          #  CLI arguments
          args: --check .
-     - name: Run lint
-       run: |
-        export PATH="${PWD}/build/:${PATH}"
-        make lint
+     - uses: nebularg/actions-luacheck@v1
+       with:
+          path: lua/
+          args: -ignore vim
   tests:
     runs-on: ubuntu-20.04
     needs: lint
