@@ -2,19 +2,14 @@ local htmlEntities = require('html-entities.htmlEntities')
 
 local he = {}
 
--- This function is supposed to be called explicitly by users to configure this
--- plugin
-function he.setup()
-  -- avoid setting global values outside of this function. Global state
-  -- mutations are hard to debug and test, so having them in a single
-  -- function/module makes it easier to reason about all possible changes
-  -- he.options = with_defaults(options)
+local defaults = {}
 
-  -- do here any startup your plugin needs, like creating commands and
-  -- mappings that depend on values passed in options
-  vim.api.nvim_create_user_command('HtmlEncode', he.encode, {})
-  vim.api.nvim_create_user_command('HtmlDecode', he.decode, {})
-end
+he.options = defaults
+
+-- The :HtmlEncode and :HtmlDecode commands are registered automatically on
+-- startup (see plugin/html-entities.lua), so calling setup() is optional.
+-- It only needs to be called to override configuration, once options exist.
+function he.setup(opts) he.options = vim.tbl_deep_extend('force', defaults, opts or {}) end
 
 function he.encode()
   local bufIndex = vim.api.nvim_get_current_buf()
@@ -55,7 +50,5 @@ function he.decode()
   --update the buffer
   vim.api.nvim_buf_set_lines(bufIndex, 0, eob, false, decodedBuf)
 end
-
-he.options = nil
 
 return he

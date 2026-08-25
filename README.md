@@ -13,26 +13,42 @@ This plugin is under active development, the HtmlEncode and Decode should work. 
 
 # Installation
 
+The `:HtmlEncode` and `:HtmlDecode` commands are registered automatically on
+startup, no `setup()` call is required.
+
 ```lua
--- packer.nvim
-use {'Summeli/html-entities.nvim', config = function()
-  require('html-entities').setup()
-end}
-
 -- lazy.nvim
-{'Summeli/html-entities.nvim', config = true}
-```
+{
+  'Summeli/html-entities.nvim',
+  cmd = { 'HtmlEncode', 'HtmlDecode' }, -- lazy-load on first use
+}
 
+-- packer.nvim
+use { 'Summeli/html-entities.nvim' }
+```
 
 # How to use
-to encode, use: 
-```lua
-HtmlEncode
+
+Run one of the commands against the current buffer:
+
+```vim
+:HtmlEncode
+:HtmlDecode
 ```
-and to decode
+
+`:HtmlEncode` replaces special characters (e.g. `<`, `&`, `é`) in the current
+buffer with their HTML entity equivalents (e.g. `&lt;`, `&amp;`, `&eacute;`).
+`:HtmlDecode` reverses this, turning HTML entities back into their characters.
+
+# Configuration
+
+This plugin currently has no configuration options. `setup()` is exposed for
+future options and is safe to call, but not required:
+
 ```lua
-HtmlDecode
+require('html-entities').setup()
 ```
+
 # Contributors
 
 Contributions are welcome. If you have an idea for a feature you'd like to see added, submit a PR rquest
