@@ -1,13 +1,14 @@
-*lazy.nvim.txt*          For Neovim >= 0.8.0          Last change: 2024 May 08
+*lazy.nvim.txt*
+                            For Neovim >= 0.8.0    Last change: 2026 August 25
 
 ==============================================================================
 Table of Contents                                *lazy.nvim-table-of-contents*
 
 1. html-entities.nvim                           |lazy.nvim-html-entities.nvim|
-2. Status                                                   |lazy.nvim-status|
-3. Requirements                                       |lazy.nvim-requirements|
-4. Installation                                       |lazy.nvim-installation|
-5. How to use                                           |lazy.nvim-how-to-use|
+2. Requirements                                       |lazy.nvim-requirements|
+3. Installation                                       |lazy.nvim-installation|
+4. How to use                                           |lazy.nvim-how-to-use|
+5. Configuration                                     |lazy.nvim-configuration|
 6. Contributors                                       |lazy.nvim-contributors|
 
 ==============================================================================
@@ -20,45 +21,52 @@ This plugin is based on htmlEntities-for-lua
 
 
 ==============================================================================
-2. Status                                                   *lazy.nvim-status*
-
-This plugin is under active development, the HtmlEncode and Decode should work.
-Contributions are accepted, if you have more ideas how to do this.
-
-
-==============================================================================
-3. Requirements                                       *lazy.nvim-requirements*
+2. Requirements                                       *lazy.nvim-requirements*
 
 - `nvim 0.9+`
 
 
 ==============================================================================
-4. Installation                                       *lazy.nvim-installation*
+3. Installation                                       *lazy.nvim-installation*
+
+The `:HtmlEncode` and `:HtmlDecode` commands are registered automatically on
+startup, no `setup()` call is required.
 
 >lua
-    -- packer.nvim
-    use {'Summeli/html-entities.nvim', config = function()
-      require('html-entities').setup()
-    end}
-    
     -- lazy.nvim
-    {'Summeli/html-entities.nvim', config = true}
+    {
+      'Summeli/html-entities.nvim',
+      cmd = { 'HtmlEncode', 'HtmlDecode' }, -- lazy-load on first use
+    }
+    
+    -- packer.nvim
+    use { 'Summeli/html-entities.nvim' }
 <
 
 
 ==============================================================================
-5. How to use                                           *lazy.nvim-how-to-use*
+4. How to use                                           *lazy.nvim-how-to-use*
 
-to encode, use:
+Run one of the commands against the current buffer:
 
->lua
-    HtmlEncode
+>vim
+    :HtmlEncode
+    :HtmlDecode
 <
 
-and to decode
+`:HtmlEncode` replaces special characters (e.g. `<`, `&`, `é`) in the current
+buffer with their HTML entity equivalents (e.g. `&lt;`, `&amp;`, `&eacute;`).
+`:HtmlDecode` reverses this, turning HTML entities back into their characters.
+
+
+==============================================================================
+5. Configuration                                     *lazy.nvim-configuration*
+
+This plugin currently has no configuration options. `setup()` is exposed for
+future options and is safe to call, but not required:
 
 >lua
-    HtmlDecode
+    require('html-entities').setup()
 <
 
 
